@@ -1,0 +1,28 @@
+{
+    "name": "anteo/yii2-mongodb-filemodels",
+    "description": "Module for model attachments on mongodb GridFS",
+    "type": "yii2-extension",
+    "keywords": ["yii2","filemodels","attachments","files","mongodb"],
+    "license": "BSD 3-Clause",
+    "authors": [
+        {
+            "name": "p3pp01",
+            "email": "pietro.bardone@gruppoanteo.it",
+            "homepage": "https://anteocoop.it"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*",
+        "yiisoft/yii2-bootstrap": "*",
+        "anteo/yii2-fontawesome": "*",
+        "yii2tech/embedded" : "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "anteo\\mongodb\\filemodels\\": ""
+        }
+    },
+    "extra": {
+        "bootstrap": "anteo\\mongodb\\filemodels\\Bootstrap"
+    }
+}
