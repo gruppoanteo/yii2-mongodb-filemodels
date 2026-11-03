@@ -8,9 +8,11 @@ Module/extension for handling model attachments stored in MongoDB GridFS within 
 - Yii2-friendly helpers, widgets, and bootstrap integration
 
 ### Requirements
-- PHP compatible with your Yii2 version
-- Yii2 framework (`yiisoft/yii2`)
-- MongoDB server with GridFS
+- PHP >= 8.1 with `ext-mongodb` >= 1.20.1 (latest 2.x recommended for MongoDB 8/9)
+- Yii2 framework (`yiisoft/yii2` ~2.0.39)
+- `yiisoft/yii2-mongodb` ^3.0.4
+- MongoDB server >= 4.0 with GridFS
+- For the old driver (`yiisoft/yii2-mongodb` 2.1, old `ext-mongodb`) use tag `v1.0.0` / branch `legacy/yii2-mongodb-2.1`
 - The following packages are required by this extension:
   - `yiisoft/yii2-bootstrap`
   - `anteo/yii2-fontawesome`
@@ -34,7 +36,7 @@ return [
     'components' => [
         'mongodb' => [
             'class' => '\\yii\\mongodb\\Connection',
-            'dsn' => 'mongodb://localhost:27017/your_database_name',
+            'dsn' => 'mongodb://user:password@localhost:27017/your_database_name?authSource=admin',
         ],
     ],
 ];

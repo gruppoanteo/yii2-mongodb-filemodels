@@ -112,7 +112,7 @@ class Filemodel extends ActiveRecordFile
 
     public function getIcon()
     {
-        $arrMime = explode('/', $this->contentType);
+        $arrMime = explode('/', (string)$this->contentType);
         if ($arrMime[0] == 'application') {
             $type = $arrMime[1];
         } else {

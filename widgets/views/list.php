@@ -15,7 +15,7 @@ use yii\widgets\ListView;
     'options' => [
         'class' => 'row'
     ],
-    'itemView' => function ($model, $key, $index, $this) {
+    'itemView' => function ($model, $key, $index, $widget) {
         $html[] = Html::beginTag('div', ['class' => 'text-center']);
         $html[] = Html::beginTag('a', ['href' => Url::to(["/{$this->context->moduleId}/default/view", 'hash' => $model->hash_key])]);
         $html[] = FA::icon($model->icon)->size(FA::SIZE_4X);
