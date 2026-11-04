@@ -17,13 +17,13 @@ use yii\widgets\ListView;
     ],
     'itemView' => function ($model, $key, $index, $widget) {
         $html[] = Html::beginTag('div', ['class' => 'text-center']);
-        $html[] = Html::beginTag('a', ['href' => Url::to(["/{$this->context->moduleId}/default/view", 'hash' => $model->hash_key])]);
+        $html[] = Html::beginTag('a', ['href' => Url::to(["/{$widget->context->moduleId}/default/view", 'hash' => $model->hash_key])]);
         $html[] = FA::icon($model->icon)->size(FA::SIZE_4X);
         $html[] = Html::tag('div', $model->filename);
         $html[] = Html::endTag('a');
         $html[] = Html::tag('small', Yii::$app->formatter->asShortSize($model->size));
         $html[] = Html::tag('small', $model->fullUploader, ['class' => 'text-muted']);
-        if ($this->description) {
+        if ($widget->description) {
             $html[] = Html::tag('p', $model->description, ['class' => 'text-muted']);
         }
         $html[] = Html::endTag('div');
